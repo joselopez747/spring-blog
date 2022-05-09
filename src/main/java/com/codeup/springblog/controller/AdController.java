@@ -35,7 +35,7 @@ public class AdController {
 
     @PostMapping("/search")
     public String searchResults(@RequestParam(name = "title") String title, Model model){
-//        model.addAttribute("results", adDao.findByTitle(title));
+        model.addAttribute("results", adDao.findByTitle(title));
         model.addAttribute("results", adDao.searchByTitleLike(title));
         return "ads/search";
     }
