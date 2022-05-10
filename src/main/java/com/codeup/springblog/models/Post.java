@@ -19,8 +19,8 @@ public class Post {
    @Column(columnDefinition = "TEXT", nullable = false)
    private String body;
 
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-   private List<PostImage> images;
+//   @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+//   private List<PostImage> images;
 
 
    @ManyToOne
@@ -68,13 +68,13 @@ public class Post {
     }
 
 
-    public List<PostImage> getImages(){
-        return images;
-    }
-
-    public void setImages(List<PostImage> images){
-        this.images = images;
-    }
+//    public List<PostImage> getImages(){
+//        return images;
+//    }
+//
+//    public void setImages(List<PostImage> images){
+//        this.images = images;
+//    }
 
     public User getUser(){
         return user;
