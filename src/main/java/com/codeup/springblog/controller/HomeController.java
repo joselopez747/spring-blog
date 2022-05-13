@@ -1,11 +1,10 @@
-package com.codeup.springblog.controller;
-
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-public class HomeController {
-    @RequestMapping(path=)
-}
-    git remote add origin git@github.com:sammy/my-new-project.git
+//package com.codeup.springblog.controller;
+//
+//
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//
+//@Controller
+//public class HomeController {
+//    @RequestMapping(path="/")
+//}
