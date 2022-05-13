@@ -8,3 +8,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping(path=)
 }
+    git remote add origin git@github.com:sammy/my-new-project.git
