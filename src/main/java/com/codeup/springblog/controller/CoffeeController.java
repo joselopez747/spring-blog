@@ -1,4 +1,4 @@
-package com.codeup.titanspringblog.controllers;
+package com.codeup.springblog.controller;
 
 import com.codeup.titanspringblog.models.Coffee;
 import com.codeup.titanspringblog.repositories.CoffeeRepository;
