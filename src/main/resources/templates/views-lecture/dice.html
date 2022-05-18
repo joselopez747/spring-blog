@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dice</title>
@@ -19,13 +19,16 @@
     </ul>
 
 
-<!--    <div>-->
-<!--    <p>You rolled a <span th:text="${n}"></span></p>-->
-<!--    </div>-->
-<!--    <div th:if="${selections}">-->
-<!--        <p>You guessed <span th:text="${roll}"></span></p>-->
-<!--        <p>You rolled a: </p>-->
-<!--    </div>-->
+    <div th:if="${selections}">
+        <p>You selected <span th:text="${n}"></span></p>
+        <ul>
+            <li th:each="selection : ${selections}">
+                <p>
+                <span th:text="${selection.roll}"></span>
+                </p>
+            </li>
+        </ul>
+    </div>
 
 
 </body>

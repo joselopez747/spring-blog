@@ -1,13 +1,10 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<!--HEAD ELEMENT-->
-<head th:replace="partials/partials.html :: head('Partials Example')"></head>
+<head th:replace="partials/partials.html :: head ('Partials Example')"></head>
 <body>
-<!--    <ul th:replace="partials/partials.html :: navbar"></ul>-->
-
-<!--HEADER-->
-    <div th:replace="partials/partials.html :: header"></div>
-<!---->
-    <script th:replace="partials/partials.html :: bootsrap-js"></script>
+<ul th:replace="partials/partials.html :: navbar"></ul>
+<div th:replace="partials/partials.html :: header"></div>
+<script th:replace="partials/partials.html :: bootstrap-js"></script>
 </body>
 </html>

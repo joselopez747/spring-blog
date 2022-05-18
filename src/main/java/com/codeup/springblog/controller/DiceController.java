@@ -24,10 +24,17 @@ public class DiceController {
 
 
     @GetMapping("/{n}")
-    @ResponseBody
     public String randomRoll(@PathVariable int n, Model model) {
         int rnd = new Random().nextInt(rolls.length);
-            return "Sorry you rolled a : " + rolls[rnd] + "!";
+//        model.addAttribute("n", n);
+//        boolean guessedRoll = true;
+//        if (n.equals(rnd)){
+//            n = false;
+//        }
+//        model.addAttribute("guessedRoll", guessedRoll);
+        return "views-lecture/dice";
+
+
 
     }
 }
