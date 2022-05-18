@@ -1,7 +1,5 @@
 package com.codeup.titanspringblog.controllers;
 
-import com.codeup.titanspringblog.models.Coffee;
-import com.codeup.titanspringblog.repositories.CoffeeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
