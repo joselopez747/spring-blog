@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ads</title>
+</head>
+<body>
+<h1>Here are all the ads:</h1>
+<ul>
+    <li th:each="ad : ${ads}">
+        <h2 th:text="${ad.title}"></h2>
+        <p th:text="${ad.description}"></p>
+        <button class="ad" th:data-id="${ad.id}">Show</button>
+    </li>
+</ul>
+<script th:replace="partials/partials.html :: jquery"></script>
+<script th:replace="partials/partials.html :: main-js"></script>
+</body>
+</html>
