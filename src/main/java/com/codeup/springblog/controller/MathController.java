@@ -2,10 +2,7 @@ package com.codeup.springblog.controller;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MathController {
@@ -32,6 +29,12 @@ public class MathController {
     @ResponseBody
     public double divide(@PathVariable double num1, @PathVariable double num2){
         return num1 / num2;
+    }
+
+
+    @GetMapping("/math")
+    public String math(){
+        return "math/index";
     }
 
 }
