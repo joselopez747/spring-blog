@@ -19,13 +19,13 @@ public class Post {
    @Column(columnDefinition = "TEXT", nullable = false)
    private String body;
 
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-   private List<PostImage> images;
-
-
-   @ManyToOne
-   @JoinColumn(name = "user_id")
-   private User user;
+//   @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+//   private List<PostImage> images;
+//
+//
+//   @ManyToOne
+//   @JoinColumn(name = "user_id")
+//   private User user;
 
 
 
@@ -68,21 +68,21 @@ public class Post {
     }
 
 
-    public List<PostImage> getImages(){
-        return images;
-    }
-
-    public void setImages(List<PostImage> images){
-        this.images = images;
-    }
-
-    public User getUser(){
-        return user;
-    }
-
-    public void setUser(User user){
-        this.user = user;
-    }
+//    public List<PostImage> getImages(){
+//        return images;
+//    }
+//
+//    public void setImages(List<PostImage> images){
+//        this.images = images;
+//    }
+//
+//    public User getUser(){
+//        return user;
+//    }
+//
+//    public void setUser(User user){
+//        this.user = user;
+//    }
 
 
 

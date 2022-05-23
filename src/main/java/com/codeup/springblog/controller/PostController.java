@@ -50,6 +50,7 @@ public class PostController {
     @GetMapping("/create")
     @ResponseBody
     public String createPost(){
+
         return "this is where you would view the form to create an album in the db";
     }
 
@@ -57,5 +58,22 @@ public class PostController {
     @ResponseBody
     public String submitPost(){
         return "this is where the logic would be for when the create post form is submitted";
+    }
+
+
+    @GetMapping("posts/{id}/edit")
+    public String editPost(
+            @PathVariable(name= "id") Long id,
+            Model model
+    ){
+        model.addAttribute("post", postsDao.findById(id));
+        return "/posts/show";
+    }
+
+    @PostMapping("/edit")
+    public String doEdit(
+            @ModelAttribute Post post
+    ){
+        postsDao.save(post);
     }
 }

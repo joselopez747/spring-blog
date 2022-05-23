@@ -9,35 +9,62 @@ package com.codeup.springblog.controller;
 @Controller
 @RequestMapping("/ads")
 public class AdController {
-    private final AdRepository adDao;
 
-    public AdController(AdRepository adDao){
+    private AdRepository adDao;
+
+    public AdController(AdRepository adDao) {
         this.adDao = adDao;
     }
 
+
+    //Reads
     @GetMapping
-    public String allAds(Model model){
+    public String allAds(Model model) {
+
         model.addAttribute("ads", adDao.findAll());
         return "ads/index";
     }
 
+    //Creates
+    @GetMapping("/create")
+    public String createAd(Model model) {
+        model.addAttribute("ad", new Ad());
+        return "ads/create";
+    }
+
+    @PostMapping("/create")
+    public String doCreateAd(
+            @ModelAttribute Ad ad
+    ){
+        adDao.save(ad);
+        return "redirect:/ads";
+    }
+
+
+//    //Updates
+//    @GetMapping("/update/{id}")
+
+
+
     @GetMapping("/{id}")
-    public String showAnAd(@PathVariable long id, Model model){
+    public String showAnAd(@PathVariable long id, Model model) {
         Ad ad = adDao.findById(id);
         model.addAttribute("ad", adDao.findById(id));
         return "ads/show";
     }
 
     @GetMapping("/search")
-    public String adSearch(){
+    public String adSearch() {
         return "ads/search";
     }
 
     @PostMapping("/search")
-    public String searchResults(@RequestParam(name = "title") String title, Model model){
+    public String searchResults(@RequestParam(name = "title") String title, Model model) {
 //        model.addAttribute("results", adDao.findByTitle(title));
         model.addAttribute("results", adDao.searchByTitleLike(title));
         return "ads/search";
     }
 
 }
+
+
