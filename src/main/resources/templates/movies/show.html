@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/partials.html :: head ('View This Movie')"></head>
+
+
+
+<body>
+<h1>[[${movie.title}]]</h1>
+<div>[[${movie.description}]]</div>
+
+<div>
+
+
+</div>
+
+
+
+
+<div>
+    <h2>User Ratings</h2>
+
+    <form th:method="post" th:action="@{/movies/update}" th:object="${movie}">
+
+        <input th:field="*{title}" type="hidden" id="title">
+        <input th:field="*{id}" type="hidden" id="id">
+        <input th:field="*{description}" type="hidden" id="description">
+        <input th:field="*{director}" type="hidden" id="director">
+        <input th:field="*{coverImage}" type="hidden" id="coverImage">
+        <input th:field="*{releaseDate}" type="hidden" id="releaseDate">
+
+
+        <div id="ratings" th:each="rating : *{ratings}">
+            <label th:for="${'rating_id' + ratingStat.index}" >[[${ratingStat.index}]]</label>
+            <input type="text" th:id="${'rating_id' + ratingStat.index}" th:field="*{ratings[__${ratingStat.index}__].userRating}">
+            <input type="hidden" th:field="*{ratings[__${ratingStat.index}__].id}">
+            <input type="hidden" th:field="*{ratings[__${ratingStat.index}__].movie}">
+        </div>
+
+
+        <button type="submit">Update!</button>
+
+    </form>
+</div>
+
+<style>
+    body {
+        padding: 10px;
+    }
+
+    #ratings {
+        padding: 20px
+
+    }
+
+</style>
+
+
+</body>
+
+</html>
