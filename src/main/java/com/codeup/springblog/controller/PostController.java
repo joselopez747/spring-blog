@@ -100,10 +100,23 @@ public class PostController {
     public String doEdit(
             @ModelAttribute Post post
     ) {
+        Post dbPost = postsDao.getById(post.getId());
+        User user = usersDao.getById(dbPost.getUser().getId());
 
+        post.setUser(user);
         postsDao.save(post);
 
         return "redirect:/posts/" + post.getId();
+    }
+
+
+    @PostMapping("/{id}/delete")
+    public String doEdit(
+            @PathVariable Long id
+    ) {
+        postsDao.deleteById(id);
+
+        return "redirect:/posts";
     }
 
 }
