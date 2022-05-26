@@ -27,9 +27,8 @@ public class DiceController {
     @ResponseBody
     public String randomRoll(@PathVariable int n, Model model) {
         int rnd = new Random().nextInt(rolls.length);
+        Dice selection = new Dice (n);
         return "Sorry you rolled a: " + rolls[rnd];
-
-
     }
 }
 

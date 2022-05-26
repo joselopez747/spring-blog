@@ -20,6 +20,9 @@ public class Dice {
         this.roll6 = roll6;
     }
 
+    public Dice(int n) {
+
+    }
 
 
     public int getRoll1() {
